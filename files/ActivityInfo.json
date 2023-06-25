@@ -1,0 +1,596 @@
+{
+  "ActivityAffluenceDTO": [
+    {
+      "ActivityID": "0736631f-9f6e-4290-8c57-05bc103ce2a3",
+      "ActivityName": "Visual Merchandising",
+      "EstablishName": "Department Store",
+      "EstablishmentID": "8ec78825-e3f2-4323-baff-5319fb78d457",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "b7457fb5-4b5e-4641-9a09-05bceb77812e",
+      "ActivityName": "Oral Check Up and Cleaning",
+      "EstablishName": "Dental Clinic",
+      "EstablishmentID": "3ea865fd-9ca6-4a53-a3b8-d60672beda94",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "5422f1d2-91ad-4386-a546-05f912341987",
+      "ActivityName": "Logo Design",
+      "EstablishName": "Creative Design Studio",
+      "EstablishmentID": "d538d38b-7344-41a0-a986-0055389c6df4",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "64546c32-6ffa-46bf-994c-19952702852f",
+      "ActivityName": "Surgery",
+      "EstablishName": "Hospital",
+      "EstablishmentID": "c8509509-1062-42ff-982c-897f88bf4b68",
+      "IsOpen": true,
+      "MaxGuests": 7
+    },
+    {
+      "ActivityID": "135f8a60-7290-4ef9-bea2-20b77d6c010d",
+      "ActivityName": "Yogurt Innovation Factory",
+      "EstablishName": "Yogurt Innovation Factory",
+      "EstablishmentID": "02c54287-8b20-48df-b927-bd54d02adaa8",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "98501770-61ae-47db-8550-27e9448a9678",
+      "ActivityName": "Paper Recycling",
+      "EstablishName": "Recycling Center",
+      "EstablishmentID": "993d9a55-9c35-4f9e-a325-c25a23d28faa",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "c353c1df-cc8d-49df-b1b7-2c801efdf612",
+      "ActivityName": "Police Case",
+      "EstablishName": "Police Station",
+      "EstablishmentID": "c13c853c-b54e-4f96-90ea-5ba9e7747a1e",
+      "IsOpen": true,
+      "MaxGuests": 10
+    },
+    {
+      "ActivityID": "18bf3b4d-1b4b-42b2-a9f5-2d4e1804e4f4",
+      "ActivityName": "Chocolate Factory",
+      "EstablishName": "Chocolate Factory",
+      "EstablishmentID": "69431207-5e37-4dcc-9f48-8d2db001cc61",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "450a36e4-94bf-42d7-af08-341a0b768761",
+      "ActivityName": "Eye Care",
+      "EstablishName": "Eye Care Center",
+      "EstablishmentID": "2c6014ea-d8ac-4558-ad87-766c1992f2cb",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "3a2afd2b-b57c-4056-a529-3437f3d45db7",
+      "ActivityName": "Makeup-Customer",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "b80545cd-d5da-483d-a37d-3729a3c30295",
+      "ActivityName": "Emergency Room",
+      "EstablishName": "Hospital",
+      "EstablishmentID": "c8509509-1062-42ff-982c-897f88bf4b68",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "3d8a6ff9-ad92-4f96-8354-37b081237651",
+      "ActivityName": "Window Washing",
+      "EstablishName": "Government Office",
+      "EstablishmentID": "f2507346-c197-4c08-a98d-66f32b878692",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "78b721f5-75bf-43e7-b0fd-39ac1a1a8d6d",
+      "ActivityName": "Steel Structure",
+      "EstablishName": "Steel Structure",
+      "EstablishmentID": "e6c2aa8b-e7dc-4be6-a0e4-bde418474f93",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "729ff9e2-477a-4215-bfa3-3d1462c04395",
+      "ActivityName": "Bike Repair",
+      "EstablishName": "Bike Repair & Testing Lab",
+      "EstablishmentID": "1cf88f79-1f51-4399-9414-829b406c0606",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "c876845b-054b-4942-974b-3ea95c91bdb2",
+      "ActivityName": "Early Stimulation Center",
+      "EstablishName": "Early Stimulation Center",
+      "EstablishmentID": "bc27ef57-d63c-4bdc-bb12-a828232863fa",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "4c11e645-2025-4b3b-9635-44f797cb8abc",
+      "ActivityName": "Pizza-Making",
+      "EstablishName": "Pizza Shop",
+      "EstablishmentID": "b950c02a-aa68-406e-9b77-8f8f0eb2c6db",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "c9a0030a-1cc1-4014-a0f7-4da2e8bf1ec8",
+      "ActivityName": "Chocolate Manufacturing",
+      "EstablishName": "Chocolate Factory",
+      "EstablishmentID": "d5e3e3eb-b681-407a-9612-e106324de4ee",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "fc3fda43-e4a5-4347-bf82-5079c4f6eaf5",
+      "ActivityName": "Bank Officer",
+      "EstablishName": "Bank",
+      "EstablishmentID": "6b2328f5-bce7-4d9b-a390-6abc85bab7e3",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "c1fd320e-a739-4ad8-b84f-520b1cb091a2",
+      "ActivityName": "Creating a Customized Fitness Program",
+      "EstablishName": "Fitness Training Center",
+      "EstablishmentID": "e38b669d-39e9-4832-8e88-42b8ff27e5d7",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "3b778398-fedf-4742-9c87-5322dd1cda7b",
+      "ActivityName": "Masters Program",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "96ea0f31-e1a3-4af0-b11f-5326d311e510",
+      "ActivityName": "Public Services: Factory in Flames Response",
+      "EstablishName": "Police Station",
+      "EstablishmentID": "c13c853c-b54e-4f96-90ea-5ba9e7747a1e",
+      "IsOpen": true,
+      "MaxGuests": 10
+    },
+    {
+      "ActivityID": "a8dce75c-148c-473a-938e-59f07be4b48b",
+      "ActivityName": "Extinguishing a Fire",
+      "EstablishName": "Fire Station",
+      "EstablishmentID": "2ab8b79c-1a11-4f0c-afdd-55fbc1a73faa",
+      "IsOpen": false,
+      "MaxGuests": 10
+    },
+    {
+      "ActivityID": "2f560b9a-bc7e-4004-b81e-5a45e2f23cfd",
+      "ActivityName": "Runway Show",
+      "EstablishName": "Fashion Boutique",
+      "EstablishmentID": "3bb046f2-7c26-4cb1-a339-a39c11c3331b",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "285794cf-a113-40c5-9d9a-5bf8c363b67f",
+      "ActivityName": "Blogging",
+      "EstablishName": "Media Center",
+      "EstablishmentID": "66c5dad0-716a-4255-acb5-634fda9ff741",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "78535c46-f82c-4df3-8b00-5db105610ed8",
+      "ActivityName": "Vlogging",
+      "EstablishName": "Media Center",
+      "EstablishmentID": "66c5dad0-716a-4255-acb5-634fda9ff741",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "f58d3c2f-f5fb-4eb4-8a02-5fed21f6a742",
+      "ActivityName": "Education",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "6bb6f581-cb34-4e1d-9bdf-634e54b51124",
+      "ActivityName": "Dental Procedure",
+      "EstablishName": "Dental Clinic",
+      "EstablishmentID": "3ea865fd-9ca6-4a53-a3b8-d60672beda94",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "e282a0b4-eff5-4aa6-9585-69eba9dfdd85",
+      "ActivityName": "Forensic Investigation",
+      "EstablishName": "Crime Scene Investigation",
+      "EstablishmentID": "15e96966-c53a-4bf9-a3ba-d4b5223c7414",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "c09e7d12-fc57-47af-89b8-6b97b28c9607",
+      "ActivityName": "Money Processing",
+      "EstablishName": "Vault",
+      "EstablishmentID": "4599ab98-e528-463f-9510-266cb5e871c5",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "2fdd188c-c6da-43a0-900d-6c34b00f8e2f",
+      "ActivityName": "Street Fashion Show",
+      "EstablishName": "Fashion Boutique",
+      "EstablishmentID": "3bb046f2-7c26-4cb1-a339-a39c11c3331b",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "523b7fd0-df49-4fb4-8679-7565691edac1",
+      "ActivityName": "Building",
+      "EstablishName": "Construction Site",
+      "EstablishmentID": "9199f72c-10c1-47e8-87e1-cad084b06c06",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "517b4946-87d5-4f1f-8a0e-76b707eee690",
+      "ActivityName": "Forensic Analysis",
+      "EstablishName": "Crime Scene Investigation",
+      "EstablishmentID": "15e96966-c53a-4bf9-a3ba-d4b5223c7414",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "e50d67a6-8169-4d0b-bf93-7a40bf4608e6",
+      "ActivityName": "Pilot Eye Exam",
+      "EstablishName": "Eye Care Center",
+      "EstablishmentID": "2c6014ea-d8ac-4558-ad87-766c1992f2cb",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "1fedd17a-319f-490e-99e6-7a7f09365f10",
+      "ActivityName": "Employment Services",
+      "EstablishName": "Government Office",
+      "EstablishmentID": "f2507346-c197-4c08-a98d-66f32b878692",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "30359cd7-8ce0-46a7-85d0-871452a93d2b",
+      "ActivityName": "Song Production",
+      "EstablishName": "Music Studio",
+      "EstablishmentID": "72825c78-e0f8-4d69-9f01-3e533b5eb225",
+      "IsOpen": true,
+      "MaxGuests": 5
+    },
+    {
+      "ActivityID": "12ca404b-7859-4451-aa46-873308eadc05",
+      "ActivityName": "Stage Show",
+      "EstablishName": "Acting Academy",
+      "EstablishmentID": "2b6af0b1-d747-486e-9bf2-e86f0d8f6a05",
+      "IsOpen": true,
+      "MaxGuests": 4
+    },
+    {
+      "ActivityID": "ee2b54dd-8e23-4053-a41f-8b58bfe99faa",
+      "ActivityName": "Tax Services",
+      "EstablishName": "Government Services Office",
+      "EstablishmentID": "5cdc7d60-6c64-43f3-9a31-db730c8f4677",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "a936f448-eabb-406c-9c16-8b6fdcf67448",
+      "ActivityName": "Arts",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "c24e62d2-ecb5-4ce4-95d8-8e30c1b9ce42",
+      "ActivityName": "Pilot Training",
+      "EstablishName": "Aviation Academy",
+      "EstablishmentID": "50cba81c-e2b9-4c8e-ac54-977d5a2109d9",
+      "IsOpen": true,
+      "MaxGuests": 10
+    },
+    {
+      "ActivityID": "b53a45a6-e68b-4a7f-8c97-8eeeed918347",
+      "ActivityName": "Podcast Production",
+      "EstablishName": "Podcast Studio",
+      "EstablishmentID": "325995ea-11cd-402b-812f-6e465bb6a554",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "28f0b95c-7e1e-441f-8792-8fb75ea44691",
+      "ActivityName": "Tour Guide",
+      "EstablishName": "City Tour Bus",
+      "EstablishmentID": "1d32da63-7198-4dc3-829c-7e854c0dc7c1",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "d26077c8-f1f3-4267-8ef5-940468ea25fd",
+      "ActivityName": "Search and Rescue",
+      "EstablishName": "NDTC",
+      "EstablishmentID": "378014cb-c31e-40bd-aff0-9562465f56c7",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "04321576-4357-4ae5-a61c-9b7d29aec263",
+      "ActivityName": "Barber station",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "6944837c-7218-45de-900c-9da7706eca52",
+      "ActivityName": "Rope Access Training",
+      "EstablishName": "Climbing Building",
+      "EstablishmentID": "a6ac89f5-3d8a-453b-803b-16539583059c",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "5654aec8-560b-4d9e-a038-a31a9e0a70b9",
+      "ActivityName": "Manicure",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "a8722436-52a6-4128-9654-a389b18de963",
+      "ActivityName": "Cabin Crew Service",
+      "EstablishName": "Aviation Academy",
+      "EstablishmentID": "50cba81c-e2b9-4c8e-ac54-977d5a2109d9",
+      "IsOpen": true,
+      "MaxGuests": 10
+    },
+    {
+      "ActivityID": "4fa61582-9f8b-4f6f-8161-a7c311a4ac21",
+      "ActivityName": "TV Crew",
+      "EstablishName": "TV & Media Studio",
+      "EstablishmentID": "aeb7a715-34aa-4fdb-8627-8e2ec12fcea0",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "ca718de2-ba54-4e06-af3d-ae51f9ff7db6",
+      "ActivityName": "NICU",
+      "EstablishName": "Hospital",
+      "EstablishmentID": "c8509509-1062-42ff-982c-897f88bf4b68",
+      "IsOpen": true,
+      "MaxGuests": 2
+    },
+    {
+      "ActivityID": "4c19604b-fd80-4098-9e93-b1afcf6b6eeb",
+      "ActivityName": "Pest Control",
+      "EstablishName": "Home Services Center",
+      "EstablishmentID": "2bcc41d6-708a-4db1-9d46-659c3b9947b4",
+      "IsOpen": true,
+      "MaxGuests": 4
+    },
+    {
+      "ActivityID": "a072bb24-c2a0-43e2-9a09-b2109a211ba3",
+      "ActivityName": "Small Business Loan Application",
+      "EstablishName": "Bank",
+      "EstablishmentID": "6b2328f5-bce7-4d9b-a390-6abc85bab7e3",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "57afeb03-706b-4058-bcb6-b57f80e28f6f",
+      "ActivityName": "Injury Prevention",
+      "EstablishName": "Sports Medicine Center",
+      "EstablishmentID": "c13aee1a-d9f7-4835-a0d5-823e45a4a799",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "8bbf366e-8c40-47bf-822c-b82125afe3ad",
+      "ActivityName": "Handyman",
+      "EstablishName": "Home Services Center",
+      "EstablishmentID": "2bcc41d6-708a-4db1-9d46-659c3b9947b4",
+      "IsOpen": true,
+      "MaxGuests": 4
+    },
+    {
+      "ActivityID": "bd35a6d9-a58d-47d2-bada-b8285669afe5",
+      "ActivityName": "Avo Superfood Studio",
+      "EstablishName": "Avo Superfood Studio",
+      "EstablishmentID": "c3f59c96-449e-4e2e-b542-a658b7e8d70d",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "d2bd5238-7bf9-41b3-997d-b8a46efc45cf",
+      "ActivityName": "Cupcake Decoration",
+      "EstablishName": "Bakery",
+      "EstablishmentID": "3c4b1273-b3f0-4c80-b297-a4fc9118067c",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "89628722-047e-4c0d-8648-b933a66e6c0f",
+      "ActivityName": "Stop Motion Animation",
+      "EstablishName": "Animation Studio",
+      "EstablishmentID": "8de8997c-b035-41d3-9114-d476a24e7aa6",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "cea6538d-3597-419b-b400-c1f382d47f71",
+      "ActivityName": "Play",
+      "EstablishName": "Acting Academy",
+      "EstablishmentID": "2b6af0b1-d747-486e-9bf2-e86f0d8f6a05",
+      "IsOpen": true,
+      "MaxGuests": 4
+    },
+    {
+      "ActivityID": "05270069-c781-48a3-bbbb-c75922412fe5",
+      "ActivityName": "Grocery Shopping and Checking Out",
+      "EstablishName": "Corner Store",
+      "EstablishmentID": "549a4813-fe92-4262-8200-514d5855157f",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "3cff60fa-5972-49a8-a170-cc5a964be2bc",
+      "ActivityName": "Veterinary Examination",
+      "EstablishName": "Veterinary Clinic",
+      "EstablishmentID": "de2e19ab-8f59-431f-94a0-fb5eb6ac0597",
+      "IsOpen": true,
+      "MaxGuests": 6
+    },
+    {
+      "ActivityID": "749d5735-ab3e-4911-8242-cd310efce8a2",
+      "ActivityName": "Rehab & Recovery Training",
+      "EstablishName": "Sports Medicine Center",
+      "EstablishmentID": "c13aee1a-d9f7-4835-a0d5-823e45a4a799",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "13c9d53a-b813-4913-b333-ce550caf0097",
+      "ActivityName": "Client",
+      "EstablishName": "Bank",
+      "EstablishmentID": "6b2328f5-bce7-4d9b-a390-6abc85bab7e3",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "9cebe18e-4636-4f82-8c25-d12f4387e38e",
+      "ActivityName": "Business",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "d871b67b-5ba0-4572-9708-d3e93f436a63",
+      "ActivityName": "Favor Delivery Service",
+      "EstablishName": "Courier Service",
+      "EstablishmentID": "5cda1dc1-b691-4672-b02e-eb0599821484",
+      "IsOpen": true,
+      "MaxGuests": 12
+    },
+    {
+      "ActivityID": "2b9b8d4b-8214-4ab3-8a6a-d65f182bc225",
+      "ActivityName": "Humanities + Sciences",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "2c98f4da-20b5-4e38-b9f0-db75e06afdf7",
+      "ActivityName": "Comic Book Writing and Illustration",
+      "EstablishName": "Creative Design Studio",
+      "EstablishmentID": "d538d38b-7344-41a0-a986-0055389c6df4",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "c9bd3690-c221-4a9e-b7ac-db859cb7c98d",
+      "ActivityName": "Hair Style-Customer",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "05728161-3008-45de-b7b9-dc41d5b952cb",
+      "ActivityName": "Hospital Imaging Lab",
+      "EstablishName": "Hospital",
+      "EstablishmentID": "c8509509-1062-42ff-982c-897f88bf4b68",
+      "IsOpen": true,
+      "MaxGuests": 7
+    },
+    {
+      "ActivityID": "0188524b-cdf7-4865-b3b4-e389ab7afe5f",
+      "ActivityName": "Engineering",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "cd4c3c71-7ad5-4334-8216-e72adc5de223",
+      "ActivityName": "Fry and Shake-Making",
+      "EstablishName": "Burgers, Fries and Shakes",
+      "EstablishmentID": "2c5abfa3-4c45-483d-a51d-c45b8cf94ee2",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "224cdb99-814f-49f5-bf60-eb867bdbd509",
+      "ActivityName": "Account Opening",
+      "EstablishName": "Bank",
+      "EstablishmentID": "6b2328f5-bce7-4d9b-a390-6abc85bab7e3",
+      "IsOpen": false,
+      "MaxGuests": 0
+    },
+    {
+      "ActivityID": "82487356-4aa7-493c-a301-f3111287fb73",
+      "ActivityName": "Audience",
+      "EstablishName": "TV & Media Studio",
+      "EstablishmentID": "aeb7a715-34aa-4fdb-8627-8e2ec12fcea0",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "d2482b6d-a182-48ea-b649-f3b3a71ce6ac",
+      "ActivityName": "Archeolinguistics Project",
+      "EstablishName": "University",
+      "EstablishmentID": "4af52921-1d1f-4733-9ebf-cb1086ef3158",
+      "IsOpen": true,
+      "MaxGuests": 1
+    },
+    {
+      "ActivityID": "38e0878d-1ba8-40c3-8f96-f796645e6099",
+      "ActivityName": "Safety & Injury Assessment Training",
+      "EstablishName": "Sports Medicine Center",
+      "EstablishmentID": "c13aee1a-d9f7-4835-a0d5-823e45a4a799",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "49713c7c-923b-4a95-aa90-fb7fed79dbf4",
+      "ActivityName": "Manicure Client",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    },
+    {
+      "ActivityID": "2979facd-649c-4d78-968c-fc91f3f80c2a",
+      "ActivityName": "Hairstyling",
+      "EstablishName": "Styling Salon",
+      "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
+      "IsOpen": true,
+      "MaxGuests": 8
+    }
+  ]
+}
