@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.0.0"  # Version number
+version = "v1.0.1"  # Version number
 
 
 def findDir(targetDir):
@@ -29,11 +29,15 @@ def findDir(targetDir):
 time = datetime.now()  # Used for the timestamp
 start_time = time.strftime("%H:%M:%S") + ' ' + str(time.date())
 
-# Bot config
-print("Setting up bot")
-load_dotenv(dotenv_path=findDir("BekhaTelegram"))  # Load .env file
+# Bot setup
+env_dir = findDir("BekhaTelegram")  # Find directory
+print("Found .env in directory " + env_dir)
+load_dotenv(dotenv_path=env_dir)  # Load .env file
+print("Loaded .env file")
 BOT_TOKEN = os.getenv("TELEGRAM_KEY")  # Grab bot token from .env
+print("Bot token obtained")
 bot = telebot.TeleBot(BOT_TOKEN)  # Create the bot
+print("Bot is running. Start time: " + start_time)
 
 
 @bot.message_handler(commands=['start', 's', 'help', 'h', 'commands', 'com', 'comm'])
@@ -117,5 +121,4 @@ def echo_all(message):
     bot.reply_to(message, message.text)
 
 
-print("Bot is running. Start time: " + start_time)
 bot.infinity_polling()  # Keep the bot running
