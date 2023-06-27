@@ -43,6 +43,7 @@ class ActivityRequest:
 
 
     def config(self):
+        """Configure the API payloads, headers, and URLs before making a request"""
         self.payloadPopulation = f'''<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
             <Header>
                 <authentication-header xmlns="kidzania.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">

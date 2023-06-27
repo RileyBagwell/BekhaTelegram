@@ -19,11 +19,13 @@ class Activity:
 
 
     def altStr(self):
+        """Return an alternative formatted string of the objected intended to be printed"""
         return 'Activity Name: ' + self.activityName + '\n' + \
                 'Establishment Name: ' + self.establishmentName + '\n'
 
 
     def __str__(self):
+        """Return a formatted string of the object intended to be printed"""
         return 'Activity Name: ' + self.activityName + '\n' + \
                 'Establishment Name: ' + self.establishmentName + '\n' + \
                 'Current Guests: ' + str(self.currentGuests) + '\n'
