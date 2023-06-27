@@ -119,14 +119,8 @@ class ActivityRequest:
             return
         request = requests.request("POST", url=url, data=payload, headers=header)  # Make the request and store raw data
         content = str(request.content)  # Parse the response into a string
-        try:  # Attempt to return the content
+        try:
             return content
-        except ValueError:  # If the information is not found, attempt again with a new key
-            self.getAuth()  # Grab a new key
-            self.config()  # Reconfigure the request information
-            request = requests.request("POST", url=url, data=payload, headers=header)  # Request and store data again
-            content = str(request.content)  # Parse the response into string
-            return content  # Return the content again
         except requests.exceptions.ConnectTimeout:
             return 'Connection Timed Out'
         except requests.exceptions.ConnectionError:
