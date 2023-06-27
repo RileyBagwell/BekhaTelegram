@@ -1,4 +1,8 @@
 """
+    Change to old version on Bekha.py
+"""
+
+"""
     Main Contributor: Riley Bagwell
     Created:    6/18/2023
     Last Edit:  6/25/2023
@@ -11,7 +15,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.0.1"  # Version number
+version = "v1.0.3"  # Version number
 
 
 def findDir(targetDir):
@@ -37,35 +41,40 @@ print("Loaded .env file")
 BOT_TOKEN = os.getenv("TELEGRAM_KEY")  # Grab bot token from .env
 print("Bot token obtained")
 bot = telebot.TeleBot(BOT_TOKEN)  # Create the bot
-print("Bot is running. Start time: " + start_time)
+print("Bot is running. Start time: " + start_time + "\n")
 
 
 @bot.message_handler(commands=['start', 's', 'help', 'h', 'commands', 'com', 'comm'])
 def command_help(message):
     """Display the help message"""
-    reply = "Kai! I'm Bekha. I can show you all the information from the park's establishments!\n" + \
-            "All information is pulled from FourZ the moment you send a command.\n\n" + \
+    print("Command 'help' triggered")
+    reply = "Kai\\! I'm Bekha\\. I can show you all the information from the park's establishments\\.\n" + \
+            "All information is pulled from FourZ the moment you send a command\\.\n\n" + \
             "You can use the following commands:\n" + \
-            "help: Show this message (can also use 'start' or 'commands')\n" + \
-            "activities: Show all active activity info for the park\n" + \
-            "closed: Show all closed activities\n" + \
-            "version: Show bot information"
-    bot.reply_to(message, reply)
+            "*help*: Show this message \\(can also use 'start' or 'commands'\\)\n" + \
+            "*activities*: Show all active activity info for the park\n" + \
+            "*closed*: Show all closed activities\n" + \
+            "*version*: Show bot information"
+    bot.reply_to(message, reply, parse_mode='MarkdownV2')
+    print("End of command\n")
 
 
 @bot.message_handler(commands=['activities', 'a', 'act', 'active'])
 def command_activities(message):
     """Display all activity information"""
+    print("Command 'activities' triggered")
     # API requests
+    print("Requesting from API...")
     park = Park.Park()  # Create park object
     actReq = ActivityRequest.ActivityRequest(park)  # Create ActivityRequest object for API request and parsing
+    print("Data received")
 
     # Build the messages to return
     chat_id = message.chat.id
-    reply = f"There are {park.guestsInActivities} kids in activities right now\n" + \
-            f"There are {park.activeEstablishments} activities with kids currently in them\n" + \
-            f"The current population is {park.currentGuests}, with {park.currentKids} minor attendees"
-    bot.reply_to(message, reply)  # Reply first message
+    reply = f"There are *{park.guestsInActivities}* kids in activities right now\n" + \
+            f"There are *{park.activeEstablishments}* activities with kids currently in them\n" + \
+            f"The current population is *{park.currentGuests}*, with *{park.currentKids}* minor attendees"
+    bot.reply_to(message, reply, parse_mode='MarkdownV2')  # Reply first message
 
     reply = "Active establishments:\n\n"
     for obj in park.activities:
@@ -81,13 +90,17 @@ def command_activities(message):
             bot.send_message(chat_id, reply[4095:])
     except:
         print("ERROR in command_activities(): likely the response was too long.")
+    print("End of command\n")
 
 
 @bot.message_handler(commands=['closed', 'inactive'])
 def command_closed(message):
     """Display the closed establishments with no guests in them"""
+    print("Command 'closed' triggered")
+    print("Requesting from API...")
     # API requests
     park = Park.Park()  # Create park object
+    print("Data received")
 
     # Build the message to return
     chat_id = message.chat.id
@@ -101,24 +114,21 @@ def command_closed(message):
         if len(reply) <= 4096:  # Send the message if it's under telegram's limit
             bot.send_message(chat_id, reply)
         else:  # Otherwise, split it into two messages
-            bot.send_message(chat_id, reply[:4095])
+            bot.reply_to(chat_id, reply[:4095])
             bot.send_message(chat_id, reply[4095:])
     except:
         print("ERROR in command_activities(): likely the response was too long.")
+    print("End of command\n")
 
 
 @bot.message_handler(commands=['info', 'i', 'version', 'v'])
 def command_info(message):
     """Display the bot information"""
+    print("Command 'info' triggered")
     reply = f"Bekha version {version}\n" + \
             f"Bot has been running since {start_time}"
     bot.reply_to(message, reply)
-
-
-@bot.message_handler(func=lambda msg: True)
-def echo_all(message):
-    """Echo a message (unused)"""
-    bot.reply_to(message, message.text)
+    print("End of command\n")
 
 
 bot.infinity_polling()  # Keep the bot running
