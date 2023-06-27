@@ -1,11 +1,7 @@
 """
-    Change to old version on Bekha.py
-"""
-
-"""
     Main Contributor: Riley Bagwell
     Created:    6/18/2023
-    Last Edit:  6/25/2023
+    Last Edit:  6/27/2023
 """
 
 import Park
@@ -15,7 +11,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.0.3"  # Version number
+version = "v1.1.0"  # Version number
 
 
 def findDir(targetDir):
@@ -71,7 +67,7 @@ def command_activities(message):
 
     # Build the messages to return
     chat_id = message.chat.id
-    reply = f"There are *{park.guestsInActivities}* kids in activities right now\n" + \
+    reply = f"There are *{park.guestsInActivities}* kids in activities right now, which is *{park.kidsBusyPercentage()}%* of the kid population\n" + \
             f"There are *{park.activeEstablishments}* activities with kids currently in them\n" + \
             f"The current population is *{park.currentGuests}*, with *{park.currentKids}* minor attendees"
     bot.reply_to(message, reply, parse_mode='MarkdownV2')  # Reply first message
@@ -93,7 +89,7 @@ def command_activities(message):
     print("End of command\n")
 
 
-@bot.message_handler(commands=['closed', 'inactive'])
+@bot.message_handler(commands=['closed', 'inactive', 'empty'])
 def command_closed(message):
     """Display the closed establishments with no guests in them"""
     print("Command 'closed' triggered")

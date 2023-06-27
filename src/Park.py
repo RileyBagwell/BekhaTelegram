@@ -23,7 +23,15 @@ class Park:
         self.activeEstablishments = 0
 
     def addActivity(self, act):
+        """Add an activity to the activities list, updating any additional fields with it"""
         self.activities.append(act)
         self.guestsInActivities += act.currentGuests
         if act.currentGuests > 0:
             self.emptyEstablishments.update({act.establishmentName: 1})
+
+
+    def kidsBusyPercentage(self):
+        """Return the percentage of kids currently in activities"""
+        if self.currentKids == 0:
+            return 0
+        return int((self.guestsInActivities / int(self.currentKids)) * 100)
