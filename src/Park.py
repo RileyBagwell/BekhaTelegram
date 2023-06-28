@@ -32,6 +32,7 @@ class Park:
 
     def kidsBusyPercentage(self):
         """Return the percentage of kids currently in activities"""
-        if self.currentKids == 0:
+        if self.currentKids == 0 or self.guestsInActivities == 0:
             return 0
-        return int((self.guestsInActivities / int(self.currentKids)) * 100)
+        else:
+            return int((self.guestsInActivities / int(self.currentKids)) * 100)
