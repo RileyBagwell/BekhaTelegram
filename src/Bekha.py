@@ -2,9 +2,6 @@
     TODO
         Add how much time is left at each activity
         Fix the closed incorrectly displaying active establishments
-        Write TimeTest tests
-        Implement a time comparison function. /act should display the end time of the activity, and how much longer that will be until it ends from curr time
-        Change from military time to "regular" time
 """
 
 
@@ -23,7 +20,7 @@ import telebot
 from tests.DateTest import DateTest
 from tests.StartTimeTest import StartTimeTest
 
-version = "v1.1.0"  # Version number
+version = "v1.2.0"  # Version number
 
 
 def findDir(targetDir):
