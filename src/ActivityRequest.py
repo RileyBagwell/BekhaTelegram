@@ -10,6 +10,8 @@ from dotenv import load_dotenv
 import os
 import json
 
+from src.utils.EndTime import EndTime
+
 
 class ActivityRequest:
     def __init__(self, park) -> None:
@@ -27,6 +29,8 @@ class ActivityRequest:
         load_dotenv(dotenv_path=self.env_file_path)
         self.username = os.getenv("USER_NAME")
         self.password = os.getenv("PASSWORD")
+        self.estID = ''
+        self.actID = ''
         # Initialize variables
         self.token = 0
         self.totalInActivities = 0
@@ -36,9 +40,8 @@ class ActivityRequest:
         # Call set up methods
         self.getAuth()  # Get API key
         self.config()  # Set up request information after API key is received
-        content = self.makeRequest('population')  # Request from population API and save it temporarily
-        self.parsePopulation(content)  # Parse the response and save it in activities list
-        self.parseAttendance(self.makeRequest('attendance'))  # Parse the response
+        self.parsePopulation(self.makeRequest('population'))  # Get population information from API
+        self.parseAttendance(self.makeRequest('attendance'))  # Get attendance information from API
         self.sortActDec()  # Sort the activities list
 
 
@@ -63,7 +66,7 @@ class ActivityRequest:
         self.payloadAttendance = f'''<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
             <Header>
                 <authentication-header xmlns="kidzania.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-                    <Token xmlns="http://schemas.datacontract.org/2004/07/KZoftware.Services.Behaviors">704d3a13-0939-4f26-bf31-bac3c8c54afc</Token>
+                    <Token xmlns="http://schemas.datacontract.org/2004/07/KZoftware.Services.Behaviors">{self.token}</Token>
                 </authentication-header>
             </Header>
             <Body>
@@ -75,6 +78,22 @@ class ActivityRequest:
         self.headerAttendance = {'SOAPAction': "http://tempuri.org/IAttendanceService/GetAttendance",
                                  'content-type': 'text/xml; charset="utf-8"'}
         self.urlAttendance = 'https://www.fourz.net:8443/POS/AttendanceManagementService.svc'
+        self.payloadTimeLeft = f'''<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+            <Header>
+                <authentication-header xmlns="kidzania.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+                    <Token xmlns="http://schemas.datacontract.org/2004/07/KZoftware.Services.Behaviors">{self.token}</Token>
+                </authentication-header>
+            </Header>
+            <Body>
+                <getActivityOperation xmlns="http://tempuri.org/">
+                    <establishmentID>{self.estID}</establishmentID>
+                    <activityID>{self.actID}</activityID>
+                </getActivityOperation>
+            </Body>
+            </Envelope>'''
+        self.headerTimeLeft = {'SOAPAction': "http://tempuri.org/IEstablishmentOperationService/getActivityOperation",
+                               'Content-Type': 'text/xml; charset="utf-8"'}
+        self.urlTimeLeft = 'https://www.fourz.net:8443/Operations/EstablishmentOperationService.svc'
 
 
     def getAuth(self):
@@ -104,7 +123,7 @@ class ActivityRequest:
 
 
     def makeRequest(self, type):
-        """Make a request given the type. Types: 'population', 'attendance'"""
+        """Make a request given the type. Types: 'population', 'attendance', 'endtime'"""
         type = type.lower()
         if type == 'population':
             payload = self.payloadPopulation
@@ -114,12 +133,16 @@ class ActivityRequest:
             payload = self.payloadAttendance
             header = self.headerAttendance
             url = self.urlAttendance
+        elif type == 'endtime':
+            payload = self.payloadTimeLeft
+            header = self.headerTimeLeft
+            url = self.urlTimeLeft
         else:
             print(f"Error in makeRequest({type}), type is invalid")
             return
-        request = requests.request("POST", url=url, data=payload, headers=header)  # Make the request and store raw data
-        content = str(request.content)  # Parse the response into a string
         try:
+            request = requests.request("POST", url=url, data=payload, headers=header)  # Make the request and store raw data
+            content = str(request.content)  # Parse the response into a string
             return content
         except requests.exceptions.ConnectTimeout:
             return 'Connection Timed Out'
@@ -147,6 +170,14 @@ class ActivityRequest:
         self.park.currentKids = response[response.index('<b:MinorAttendees>') + 18:response.index('</b:MinorAttendees>')]
 
 
+    def parseTime(self, response):
+        """Parse the response from time and return the information"""
+        try:
+            return response[response.index('<b:TimeEnd>') + 11:response.index('</b:TimeEnd>')]
+        except:
+            return "TimeEnd not found!"
+
+
     def createActivity(self, response, id, currGuests):
         """Create a new Activity and add it to the activities given its ID and current number of guests"""
         act = self.findActivityByID(id)
@@ -161,7 +192,14 @@ class ActivityRequest:
             estName = act['EstablishName']
             maxGuests = act['MaxGuests']
             open = act['IsOpen']
-        newAct = Activity.Activity(actName, estName, int(currGuests), open, maxGuests)
+            self.estID = act['EstablishmentID']
+            self.actID = act['ActivityID']
+            self.config()
+        if int(currGuests) > 0:
+            timeLeft = EndTime(self.parseTime(self.makeRequest('endtime')))
+        else:
+            timeLeft = EndTime("00:00")
+        newAct = Activity.Activity(actName, estName, int(currGuests), open, maxGuests, timeLeft)
         self.park.addActivity(newAct)
 
 

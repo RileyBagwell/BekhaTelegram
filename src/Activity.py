@@ -8,24 +8,26 @@
         isOpen - if the activity is open or not (not currently implemented)
 """
 
+import src.utils.EndTime
+
 
 class Activity:
-    def __init__(self, activityName, establishmentName, currActGuests, isOpen, maxGuests):
+    def __init__(self, activityName, establishmentName, currActGuests, isOpen, maxGuests, timeLeft):
         self.activityName = activityName
         self.establishmentName = establishmentName
         self.currentGuests = currActGuests
         self.maxGuests = maxGuests
         self.isOpen = isOpen
-
+        self.timeLeft = timeLeft
 
     def altStr(self):
         """Return an alternative formatted string of the objected intended to be printed"""
         return 'Activity Name: ' + self.activityName + '\n' + \
-                'Establishment Name: ' + self.establishmentName + '\n'
-
+            'Establishment Name: ' + self.establishmentName + '\n'
 
     def __str__(self):
         """Return a formatted string of the object intended to be printed"""
         return 'Activity Name: ' + self.activityName + '\n' + \
-                'Establishment Name: ' + self.establishmentName + '\n' + \
-                'Current Guests: ' + str(self.currentGuests) + '\n'
+            'Establishment Name: ' + self.establishmentName + '\n' + \
+            'Current Guests: ' + str(self.currentGuests) + '\n' + \
+            'Remaining Time: ' + self.timeLeft.__str__() + '\n'

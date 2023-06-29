@@ -1,4 +1,14 @@
 """
+    TODO
+        Add how much time is left at each activity
+        Fix the closed incorrectly displaying active establishments
+        Write TimeTest tests
+        Implement a time comparison function. /act should display the end time of the activity, and how much longer that will be until it ends from curr time
+        Change from military time to "regular" time
+"""
+
+
+"""
     Main Contributor: Riley Bagwell
     Created:    6/18/2023
     Last Edit:  6/27/2023
@@ -10,6 +20,8 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 import telebot
+from tests.DateTest import DateTest
+from tests.StartTimeTest import StartTimeTest
 
 version = "v1.1.0"  # Version number
 
@@ -59,6 +71,7 @@ def command_help(message):
 def command_activities(message):
     """Display all activity information"""
     print("Command 'activities' triggered")
+    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 15 seconds...")
     # API requests
     print("Requesting from API...")
     park = Park.Park()  # Create park object
@@ -70,7 +83,7 @@ def command_activities(message):
     reply = f"There are *{park.guestsInActivities}* kids in activities right now, which is *{park.kidsBusyPercentage()}%* of the kid population\n" + \
             f"There are *{park.activeEstablishments}* activities with kids currently in them\n" + \
             f"The current population is *{park.currentGuests}*, with *{park.currentKids}* minor attendees"
-    bot.reply_to(message, reply, parse_mode='MarkdownV2')  # Reply first message
+    bot.send_message(chat_id, reply, parse_mode='MarkdownV2')  # Reply first message
 
     reply = "Active establishments:\n\n"
     for obj in park.activities:
@@ -89,7 +102,7 @@ def command_activities(message):
     print("End of command\n")
 
 
-@bot.message_handler(commands=['closed', 'inactive', 'empty'])
+@bot.message_handler(commands=['empty', 'e', 'inactive'])
 def command_closed(message):
     """Display the closed establishments with no guests in them"""
     print("Command 'closed' triggered")
@@ -124,6 +137,15 @@ def command_info(message):
     reply = f"Bekha version {version}\n" + \
             f"Bot has been running since {start_time}"
     bot.reply_to(message, reply)
+    print("End of command\n")
+
+
+@bot.message_handler(commands=['commandTest', 'ct'])
+def command_commandTest(message):
+    """Testing command"""
+    print("Command 'commandTest' triggered")
+    DateTest()  # Test DateTest
+    StartTimeTest()  # Test StartTime
     print("End of command\n")
 
 
