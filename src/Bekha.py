@@ -100,8 +100,8 @@ def command_activities(message):
 
 
 @bot.message_handler(commands=['empty', 'e', 'inactive'])
-def command_closed(message):
-    """Display the closed establishments with no guests in them"""
+def command_empty(message):
+    """Display the empty establishments with no guests in them"""
     print("Command 'empty' triggered")
     bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     print("Requesting from API...")
