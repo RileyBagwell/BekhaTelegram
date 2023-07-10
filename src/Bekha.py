@@ -10,8 +10,6 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime
 import telebot
-from tests.DateTest import DateTest
-from tests.StartTimeTest import StartTimeTest
 
 version = "v1.2.3"  # Version number
 
@@ -130,15 +128,6 @@ def command_info(message):
     reply = f"Bekha version {version}\n" + \
             f"Bot has been running since {start_time}"
     bot.reply_to(message, reply)
-    print("End of command\n")
-
-
-@bot.message_handler(commands=['commandTest', 'ct'])
-def command_commandTest(message):
-    """Testing command"""
-    print("Command 'commandTest' triggered")
-    DateTest()  # Test DateTest
-    StartTimeTest()  # Test StartTime
     print("End of command\n")
 
 
