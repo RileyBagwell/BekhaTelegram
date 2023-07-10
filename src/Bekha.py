@@ -68,7 +68,7 @@ def command_help(message):
 def command_activities(message):
     """Display all activity information"""
     print("Command 'activities' triggered")
-    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 10 seconds...")
+    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     # API requests
     print("Requesting from API...")
     park = Park.Park()  # Create park object
@@ -103,7 +103,7 @@ def command_activities(message):
 def command_closed(message):
     """Display the closed establishments with no guests in them"""
     print("Command 'empty' triggered")
-    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 10 seconds...")
+    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     print("Requesting from API...")
     # API requests
     park = Park.Park()  # Create park object
