@@ -158,7 +158,6 @@ class ActivityRequest:
             currActGuests = response[
                             response.index('<b:CurrentAffluence>') + 20:response.index('</b:CurrentAffluence>')]
             self.createActivity(response, actID, currActGuests)
-            self.park.guestsInActivities += int(currActGuests)  # Increase total guests in activities
             if int(currActGuests) > 0:  # Check if the establishment has guests, increase activeEstablishments if so
                 self.park.activeEstablishments += 1
             response = response[response.index('</b:ActivityAffluenceDTO>'):]

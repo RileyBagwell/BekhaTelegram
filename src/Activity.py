@@ -3,7 +3,7 @@
     Important fields:
         activityName - name of the activity
         establishmentName - name of the establishment the activity is at
-        currActGuests - number of guests at the activity
+        currentGuests - number of guests at the activity
         maxGuests - max number of guests allowed in the activity
         isOpen - if the activity is open or not (not currently implemented)
 """
