@@ -1,11 +1,4 @@
 """
-    TODO
-        Add how much time is left at each activity
-        Fix the closed incorrectly displaying active establishments
-"""
-
-
-"""
     Main Contributor: Riley Bagwell
     Created:    6/18/2023
     Last Edit:  6/27/2023
@@ -58,7 +51,7 @@ def command_help(message):
             "You can use the following commands:\n" + \
             "*help*: Show this message \\(can also use 'start' or 'commands'\\)\n" + \
             "*activities*: Show all active activity info for the park\n" + \
-            "*closed*: Show all closed activities\n" + \
+            "*empty*: Show all empty activities\n" + \
             "*version*: Show bot information"
     bot.reply_to(message, reply, parse_mode='MarkdownV2')
     print("End of command\n")
