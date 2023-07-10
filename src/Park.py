@@ -26,8 +26,17 @@ class Park:
         """Add an activity to the activities list, updating any additional fields with it"""
         self.activities.append(act)
         self.guestsInActivities += act.currentGuests
-        if act.currentGuests > 0:
+        if act.currentGuests == 0:
             self.emptyEstablishments.update({act.establishmentName: 1})
+
+
+    def finalizeEmptyEstablishments(self):
+        """Convert the emptyEstablishments dictionary into an array, to be sorted and displayed"""
+        tempArr = []
+        for key in self.emptyEstablishments:
+            tempArr.append(str(key))
+        tempArr.sort()
+        self.emptyEstablishments = tempArr
 
 
     def kidsBusyPercentage(self):

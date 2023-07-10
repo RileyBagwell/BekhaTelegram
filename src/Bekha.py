@@ -20,7 +20,7 @@ import telebot
 from tests.DateTest import DateTest
 from tests.StartTimeTest import StartTimeTest
 
-version = "v1.2.0"  # Version number
+version = "v1.2.1"  # Version number
 
 
 def findDir(targetDir):
@@ -103,6 +103,7 @@ def command_activities(message):
 def command_closed(message):
     """Display the closed establishments with no guests in them"""
     print("Command 'empty' triggered")
+    bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 10 seconds...")
     print("Requesting from API...")
     # API requests
     park = Park.Park()  # Create park object
@@ -112,8 +113,9 @@ def command_closed(message):
     chat_id = message.chat.id
     actReq = ActivityRequest.ActivityRequest(park)  # Create ActivityRequest object for API request and parsing
     reply = "Empty establishments: \n\n"
-    for key in park.emptyEstablishments:
-        reply += key + "\n"
+    park.finalizeEmptyEstablishments()  # Change emptyEstablishments dictionary to array
+    for obj in park.emptyEstablishments:
+        reply += obj + "\n"
 
     # Attempt to send the message
     try:
