@@ -1,7 +1,7 @@
 """
     Main Contributor: Riley Bagwell
     Created:    6/18/2023
-    Last Edit:  6/27/2023
+    Last Edit:  7/10/2023
 """
 
 import Park
@@ -13,7 +13,7 @@ import telebot
 from tests.DateTest import DateTest
 from tests.StartTimeTest import StartTimeTest
 
-version = "v1.2.1"  # Version number
+version = "v1.2.2"  # Version number
 
 
 def findDir(targetDir):
