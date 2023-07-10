@@ -9,8 +9,6 @@
         activeEstablishments - # of establishments with kids in them
 """
 
-import Activity
-
 
 class Park:
     def __init__(self):

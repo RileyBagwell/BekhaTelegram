@@ -8,8 +8,6 @@
         isOpen - if the activity is open or not (not currently implemented)
 """
 
-import src.utils.EndTime
-
 
 class Activity:
     def __init__(self, activityName, establishmentName, currActGuests, isOpen, maxGuests, timeLeft):

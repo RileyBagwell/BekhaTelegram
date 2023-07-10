@@ -13,10 +13,11 @@ import telebot
 from tests.DateTest import DateTest
 from tests.StartTimeTest import StartTimeTest
 
-version = "v1.2.2"  # Version number
+version = "v1.2.3"  # Version number
 
 
 def findDir(targetDir):
+    """Find the target directory"""
     abs_path = os.path.abspath(__file__)  # Absolute path to the file
     current_dir = abs_path
     while current_dir[len(current_dir) - 13:] != targetDir:  # Find the BEKHA directory
@@ -48,11 +49,11 @@ def command_help(message):
     print("Command 'help' triggered")
     reply = "Kai\\! I'm Bekha\\. I can show you all the information from the park's establishments\\.\n" + \
             "All information is pulled from FourZ the moment you send a command\\.\n\n" + \
-            "You can use the following commands:\n" + \
-            "*help*: Show this message \\(can also use 'start' or 'commands'\\)\n" + \
-            "*activities*: Show all active activity info for the park\n" + \
-            "*empty*: Show all empty activities\n" + \
-            "*version*: Show bot information"
+            "You can use the following /commands:\n" + \
+            "*help*: Show this message \\('help', 'h', 'start', 's'\\)\n" + \
+            "*activities*: Show all active activity info for the park \\('act', a'\\)\n" + \
+            "*empty*: Show all empty activities \\('empty', 'e'\\)\n" + \
+            "*version*: Show bot information \\('info', 'version', 'v'\\)"
     bot.reply_to(message, reply, parse_mode='MarkdownV2')
     print("End of command\n")
 

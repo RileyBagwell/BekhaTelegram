@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 import os
 import json
 
-from src.utils.EndTime import EndTime
+from utils.EndTime import EndTime
 
 
 class ActivityRequest:
