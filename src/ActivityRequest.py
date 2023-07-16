@@ -198,7 +198,12 @@ class ActivityRequest:
             timeLeft = EndTime(self.parseTime(self.makeRequest('endtime')))
         else:
             timeLeft = EndTime("00:00")
-        newAct = Activity.Activity(actName, estName, int(currGuests), open, maxGuests, timeLeft)
+        schedTime = self.park.schedule.getScheduledAct(estName)
+        if schedTime != None:
+            isScheduled = True
+        else:
+            isScheduled = False
+        newAct = Activity.Activity(actName, estName, int(currGuests), open, maxGuests, timeLeft, isScheduled, schedTime)
         self.park.addActivity(newAct)
 
 

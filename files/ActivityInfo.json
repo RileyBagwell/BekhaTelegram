@@ -66,7 +66,7 @@
     },
     {
       "ActivityID": "450a36e4-94bf-42d7-af08-341a0b768761",
-      "ActivityName": "Eye Care",
+      "ActivityName": "Eye Care Session",
       "EstablishName": "Eye Care Center",
       "EstablishmentID": "2c6014ea-d8ac-4558-ad87-766c1992f2cb",
       "IsOpen": true,
@@ -371,7 +371,7 @@
     {
       "ActivityID": "4fa61582-9f8b-4f6f-8161-a7c311a4ac21",
       "ActivityName": "TV Crew",
-      "EstablishName": "TV & Media Studio",
+      "EstablishName": "TV Studio",
       "EstablishmentID": "aeb7a715-34aa-4fdb-8627-8e2ec12fcea0",
       "IsOpen": true,
       "MaxGuests": 8

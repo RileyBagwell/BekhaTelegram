@@ -8,6 +8,7 @@
         guestsInActivities - # of kids in all activities
         activeEstablishments - # of establishments with kids in them
 """
+from utils.Schedule import Schedule
 
 
 class Park:
@@ -19,20 +20,27 @@ class Park:
         self.currentKids = 0
         self.guestsInActivities = 0
         self.activeEstablishments = 0
+        self.schedule = Schedule()
 
     def addActivity(self, act):
         """Add an activity to the activities list, updating any additional fields with it"""
         self.activities.append(act)
         self.guestsInActivities += act.currentGuests
         if act.currentGuests == 0:
-            self.emptyEstablishments.update({act.establishmentName: 1})
+            if act.isScheduled:
+                self.emptyEstablishments.update({act.establishmentName: act.schedTime})
+            else:
+                self.emptyEstablishments.update({act.establishmentName: None})
 
 
     def finalizeEmptyEstablishments(self):
         """Convert the emptyEstablishments dictionary into an array, to be sorted and displayed"""
         tempArr = []
         for key in self.emptyEstablishments:
-            tempArr.append(str(key))
+            if self.emptyEstablishments.get(key):
+                tempArr.append(str(key) + " scheduled at " + str(self.emptyEstablishments.get(key)))
+            else:
+                tempArr.append(str(key))
         tempArr.sort()
         self.emptyEstablishments = tempArr
 

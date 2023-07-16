@@ -1,12 +1,7 @@
 """
-    TODO: Add a "yes" or "no" next to activities if they're scheduled on the scheduler app
-        Say "FourZ has timed out. Please try again in a few moments" when FourZ times out
-"""
-
-"""
     Contributors: Riley Bagwell, Diego Trujano
     Created:    6/18/2023
-    Last Edit:  7/11/2023
+    Last Edit:  7/16/2023
 """
 
 import Park
@@ -16,7 +11,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.2.4"  # Version number
+version = "v1.3.0"  # Version number
 
 
 def findDir(targetDir):
