@@ -38,7 +38,7 @@ class Park:
         tempArr = []
         for key in self.emptyEstablishments:
             if self.emptyEstablishments.get(key):
-                tempArr.append(str(key) + " scheduled at " + str(self.emptyEstablishments.get(key)))
+                tempArr.append(str(key) + " [Scheduled at " + str(self.emptyEstablishments.get(key)) + "]")
             else:
                 tempArr.append(str(key))
         tempArr.sort()
