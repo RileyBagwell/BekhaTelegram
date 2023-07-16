@@ -1,7 +1,12 @@
 """
-    Main Contributor: Riley Bagwell
+    TODO: Add a "yes" or "no" next to activities if they're scheduled on the scheduler app
+        Say "FourZ has timed out. Please try again in a few moments" when FourZ times out
+"""
+
+"""
+    Contributors: Riley Bagwell, Diego Trujano
     Created:    6/18/2023
-    Last Edit:  7/10/2023
+    Last Edit:  7/11/2023
 """
 
 import Park
@@ -26,9 +31,22 @@ def findDir(targetDir):
     return os.path.join(current_dir, ".env")
 
 
+def getTime():
+    """Return the time of when this method was called"""
+    time = datetime.now()  # Used for the timestamp
+    return time.strftime("%H:%M:%S") + ' ' + str(time.date())
+
+
+def getUsername(message):
+    """Return the username of who sent the given message. If they don't have a username, return the phone # instead."""
+    tempName = message.from_user.username
+    if str(tempName) == "None":
+        tempName = message.from_user.phone_number
+    return tempName
+
+
 # Set up time
-time = datetime.now()  # Used for the timestamp
-start_time = time.strftime("%H:%M:%S") + ' ' + str(time.date())
+bot_start_time = getTime()
 
 # Bot setup
 env_dir = findDir("BekhaTelegram")  # Find directory
@@ -38,13 +56,13 @@ print("Loaded .env file")
 BOT_TOKEN = os.getenv("TELEGRAM_KEY")  # Grab bot token from .env
 print("Bot token obtained")
 bot = telebot.TeleBot(BOT_TOKEN)  # Create the bot
-print("Bot is running. Start time: " + start_time + "\n")
+print("Bot is running. Start time: " + bot_start_time + "\n")
 
 
 @bot.message_handler(commands=['start', 's', 'help', 'h', 'commands', 'com', 'comm'])
 def command_help(message):
     """Display the help message"""
-    print("Command 'help' triggered")
+    print(f"Command 'help' triggered by {getUsername(message)} at {getTime()}")
     reply = "Kai\\! I'm Bekha\\. I can show you all the information from the park's establishments\\.\n" + \
             "All information is pulled from FourZ the moment you send a command\\.\n\n" + \
             "You can use the following /commands:\n" + \
@@ -59,7 +77,7 @@ def command_help(message):
 @bot.message_handler(commands=['activities', 'a', 'act', 'active'])
 def command_activities(message):
     """Display all activity information"""
-    print("Command 'activities' triggered")
+    print(f"Command 'activities' triggered by {getUsername(message)} at {getTime()}")
     bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     # API requests
     print("Requesting from API...")
@@ -74,10 +92,14 @@ def command_activities(message):
             f"The current population is *{park.currentGuests}*, with *{park.currentKids}* minor attendees"
     bot.send_message(chat_id, reply, parse_mode='MarkdownV2')  # Reply first message
 
-    reply = "Active establishments:\n\n"
-    for obj in park.activities:
-        if obj.currentGuests > 0:
-            reply += obj.__str__() + "\n"
+    # Check that there are active activities
+    if len(park.activities) != 0:
+        reply = "Active establishments:\n\n"
+        for obj in park.activities:
+            if obj.currentGuests > 0:
+                reply += obj.__str__() + "\n"
+    else:
+        reply = "There are currently no activities with guests in them."
 
     # Attempt to send the message
     try:
@@ -94,7 +116,7 @@ def command_activities(message):
 @bot.message_handler(commands=['empty', 'e', 'inactive'])
 def command_empty(message):
     """Display the empty establishments with no guests in them"""
-    print("Command 'empty' triggered")
+    print(f"Command 'empty' triggered by {getUsername(message)} at {getTime()}")
     bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     print("Requesting from API...")
     # API requests
@@ -124,9 +146,9 @@ def command_empty(message):
 @bot.message_handler(commands=['info', 'i', 'version', 'v'])
 def command_info(message):
     """Display the bot information"""
-    print("Command 'info' triggered")
+    print(f"Command 'info' triggered by {getUsername(message)} at {getTime()}")
     reply = f"Bekha version {version}\n" + \
-            f"Bot has been running since {start_time}"
+            f"Bot has been running since {bot_start_time}"
     bot.reply_to(message, reply)
     print("End of command\n")
 
