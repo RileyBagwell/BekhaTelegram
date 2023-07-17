@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.3.1"  # Version number
+version = "v1.3.2"  # Version number
 
 
 def findDir(targetDir):
@@ -33,10 +33,10 @@ def getTime():
 
 
 def getUsername(message):
-    """Return the username of who sent the given message. If they don't have a username, return the phone # instead."""
+    """Return the username of who sent the given message"""
     tempName = message.from_user.username
-    if str(tempName) == "None":
-        tempName = message.from_user.phone_number
+    if str(tempName) == None:
+        tempName = "None"
     return tempName
 
 
