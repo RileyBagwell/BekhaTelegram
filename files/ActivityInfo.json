@@ -591,6 +591,14 @@
       "EstablishmentID": "799694fa-5059-4608-9754-3d70d8e07642",
       "IsOpen": true,
       "MaxGuests": 8
+    },
+    {
+      "ActivityID": "e8ca520f-e425-4843-adf1-d7c31200c7b2",
+      "ActivityName": "Taco Making",
+      "EstablishName": "Happy Kitchen",
+      "EstablishmentID": "20786466-b238-4340-83dc-8476170e89e6",
+      "IsOpen": true,
+      "MaxGuests": 6
     }
   ]
 }
