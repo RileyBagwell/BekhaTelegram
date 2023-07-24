@@ -1,7 +1,7 @@
 """
     Contributors: Riley Bagwell, Diego Trujano
     Created:    6/18/2023
-    Last Edit:  7/16/2023
+    Last Edit:  7/24/2023
 """
 
 import Park
@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.3.2"  # Version number
+version = "v1.3.3"  # Version number
 
 
 def findDir(targetDir):
