@@ -1,10 +1,8 @@
 """
     Contributors: Riley Bagwell, Diego Trujano
     Created:    6/18/2023
-    Last Edit:  7/24/2023
+    Last Edit: 8/8/2023
 """
-import pymssql
-
 import Park
 import ActivityRequest
 import os
@@ -22,7 +20,7 @@ def findDir(targetDir):
     while current_dir[len(current_dir) - 13:] != targetDir:  # Find the BEKHA directory
         current_dir = os.path.dirname(current_dir)
         if current_dir == "C:\\":  # Stop an endless loop if the folder isn't found
-            print('Directory "BekhaTelegram" not found in project.')
+            print(f'Directory "{targetDir}" not found in project.')
             return "C:"
     return os.path.join(current_dir, ".env")
 
@@ -51,13 +49,6 @@ load_dotenv(dotenv_path=env_dir)  # Load .env file
 print("Loaded .env file")
 BOT_TOKEN = os.getenv("TELEGRAM_KEY")  # Grab bot token from .env
 print("Bot token obtained")
-db_server = os.getenv("DB_SERVER")
-db_username = os.getenv("DB_USER")
-db_password = os.getenv("DB_PASS")
-print("Database credentials obtained")
-cnct = pymssql.connect(server=db_server, port='1433', user=db_username, password=db_password, database='Tableau')
-cnct.cursor()
-print("Database accessed")
 bot = telebot.TeleBot(BOT_TOKEN)  # Create the bot
 print("Bot is running. Start time: " + bot_start_time + "\n")
 
