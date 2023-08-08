@@ -3,6 +3,7 @@
     Created:    6/18/2023
     Last Edit:  7/24/2023
 """
+import pymssql
 
 import Park
 import ActivityRequest
@@ -11,7 +12,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.3.3"  # Version number
+version = "v1.4.0"  # Version number
 
 
 def findDir(targetDir):
@@ -50,6 +51,13 @@ load_dotenv(dotenv_path=env_dir)  # Load .env file
 print("Loaded .env file")
 BOT_TOKEN = os.getenv("TELEGRAM_KEY")  # Grab bot token from .env
 print("Bot token obtained")
+db_server = os.getenv("DB_SERVER")
+db_username = os.getenv("DB_USER")
+db_password = os.getenv("DB_PASS")
+print("Database credentials obtained")
+cnct = pymssql.connect(server=db_server, port='1433', user=db_username, password=db_password, database='Tableau')
+cnct.cursor()
+print("Database accessed")
 bot = telebot.TeleBot(BOT_TOKEN)  # Create the bot
 print("Bot is running. Start time: " + bot_start_time + "\n")
 
