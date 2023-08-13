@@ -1,13 +1,15 @@
 """
-    Contains the data for an activity's start time
-    ** UNUSED **
+    Manages StartDateTime from the SQL database
+    UNUSED
 """
+from datetime import datetime
 
 
-class StartTime:
+class StartDateTime:
     def __init__(self, str):
-        """Create a Time object given a StarDate field from the API"""
-        index = str.index('T')
+        """Create a Time object given a StartDateTime field from the database.
+            format is 'yyyy-mm-dd hh:mm:ss.sss'"""
+        index = str.index(' ')
         self.hour = str[index + 1:index + 3]
         self.minute = str[index + 4:index + 6]
         self.second = str[index + 7:index + 9]
@@ -27,3 +29,10 @@ class StartTime:
                 self.hour = str(int(self.hour) - 12)
         else:
             self.period = 'AM'
+
+
+    def isInFuture(self):
+        """Return true if this time is in the future.
+            Unfinished and unused."""
+        time = datetime.now()  # Used for the timestamp
+        currTime = time.strftime("%H:%M:%S") + ' ' + str(time.date())
