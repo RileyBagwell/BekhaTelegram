@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import telebot
 
-version = "v1.4.0"  # Version number
+version = "v1.5.0"  # Version number
 
 
 def findDir(targetDir):
