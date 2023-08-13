@@ -12,7 +12,7 @@ from utils.Schedule import Schedule
 
 
 class Park:
-    def __init__(self):
+    def __init__(self, env_dir):
         # Initialize park variables
         self.activities = []
         self.emptyEstablishments = {}
@@ -20,7 +20,7 @@ class Park:
         self.currentKids = 0
         self.guestsInActivities = 0
         self.activeEstablishments = 0
-        self.schedule = Schedule()
+        self.schedule = Schedule(env_dir)
 
     def addActivity(self, act):
         """Add an activity to the activities list, updating any additional fields with it"""

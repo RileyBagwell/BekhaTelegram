@@ -34,6 +34,6 @@ class Activity:
             'Current Guests: ' + str(self.currentGuests) + '\n' + \
             'Remaining Time: ' + self.timeLeft.__str__() + '\n'
         if self.isScheduled:
-            reply += 'Scheduled for: ' + self.schedTime + '\n'
+            reply += 'Scheduled for: ' + str(self.schedTime) + '\n'
         return reply
 

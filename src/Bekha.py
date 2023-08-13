@@ -75,7 +75,7 @@ def command_activities(message):
     bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     # API requests
     print("Requesting from API...")
-    park = Park.Park()  # Create park object
+    park = Park.Park(env_dir)  # Create park object
     actReq = ActivityRequest.ActivityRequest(park)  # Create ActivityRequest object for API request and parsing
     print("Data received")
 
@@ -114,7 +114,7 @@ def command_empty(message):
     bot.reply_to(message, "Hang tight, I'm looking up activity information for you! This may take up to 20 seconds...")
     print("Requesting from API...")
     # API requests
-    park = Park.Park()  # Create park object
+    park = Park.Park(env_dir)  # Create park object
     print("Data received")
 
     # Build the message to return
